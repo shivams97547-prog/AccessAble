@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed accessibility report for this location — community reports on step-free access, ramps, lifts, accessible toilets and more.">
+  <title>Location Accessibility Profile · AccessAble</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    .sr-only {
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+  </style>
+</head>
+<body data-page="location">
+
+  <!-- Icon Sprite -->
+  <div style="display:none" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-wheelchair" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="1.5"/><path d="M9 9h4l2 6h3"/><path d="M9 9l-1 5"/><circle cx="8" cy="19" r="2.5"/><circle cx="16" cy="19" r="2.5"/><path d="M8 16.5v-2.5h6"/></symbol>
+      <symbol id="icon-ramp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L21 4"/><path d="M21 4v5"/><path d="M21 4h-5"/><path d="M3 20h18"/></symbol>
+      <symbol id="icon-lift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/><path d="M7 9l-2 2 2 2"/><path d="M17 15l2-2-2-2"/></symbol>
+      <symbol id="icon-toilet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="5" r="2"/><circle cx="15" cy="5" r="2"/><path d="M6 10h5v4l1 5H7l1-5v-4z"/><path d="M13 10h5l1 5v3h-2v-3h-3v3h-2v-3l1-5z"/></symbol>
+      <symbol id="icon-parking" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></symbol>
+      <symbol id="icon-sensory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="icon-stepfree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M3 20V8h4v4h4v4h4v4"/></symbol>
+      <symbol id="icon-doorway" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 012-2h12a2 2 0 012 2v16"/><path d="M9 21V7h6v14"/><circle cx="13.5" cy="14" r="1" fill="currentColor"/></symbol>
+      <symbol id="icon-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="11" y1="3" x2="11" y2="21"/><line x1="15" y1="8" x2="18" y2="8"/><line x1="15" y1="12" x2="18" y2="12"/><line x1="15" y1="16" x2="18" y2="16"/></symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+      <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="icon-community" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></symbol>
+      <symbol id="icon-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+    </svg>
+  </div>
+
+  <a href="#main" class="sr-only" style="position:fixed;top:var(--space-4);left:var(--space-4);z-index:1000;background:var(--color-accent-mint);color:var(--color-text-inverse);padding:var(--space-2) var(--space-4);border-radius:var(--radius-md);font-weight:var(--font-semibold)" tabindex="0">Skip to main content</a>
+
+  <!-- Nav -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AccessAble home">
+          <svg class="nav__logo-icon" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="7" r="2.5"/><path d="M11 13h8l3 9h4"/><path d="M11 13l-2 7"/>
+            <circle cx="10" cy="25" r="3.5"/><circle cx="21" cy="25" r="3.5"/><path d="M10 22v-3.5h7.5"/>
+          </svg>
+          AccessAble
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html#discover">Explore</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#community">Community</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="report.html" class="btn btn-ghost btn-sm" style="display:inline-flex">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-trending"/></svg>
+            Report a Place
+          </a>
+          <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#icon-menu"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+      <nav class="nav-mobile__links">
+        <a href="index.html#discover">Explore</a>
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#community">Community</a>
+      </nav>
+      <div class="nav-mobile__cta">
+        <a href="report.html" class="btn btn-primary btn-full">Report a Place</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="page">
+
+      <!-- Demo disclaimer -->
+      <div style="background:rgba(245,185,66,0.07);border-bottom:1px solid rgba(245,185,66,0.15);padding:var(--space-2) 0" role="alert" aria-label="Demo data notice">
+        <div class="container" style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-amber)">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg>
+          <strong>Demo data only.</strong> This profile shows illustrative sample data. It does not represent verified real-world accessibility information.
+        </div>
+      </div>
+
+      <!-- Location hero -->
+      <div id="locationHero" class="location-hero">
+<div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <a href="index.html#discover">Explore Places</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span class="breadcrumb__current" aria-current="page">King's Cross Station</span>
+      </nav>
+
+      <div class="location-hero__inner">
+        <div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap">
+            <span class="badge badge-category">
+              <span aria-hidden="true">🚉</span> Station & Transport
+            </span>
+            <span class="badge badge-verified">
+              <svg class="icon" style="width:10px;height:10px" aria-hidden="true"><use href="#icon-shield"/></svg>
+              Community Verified
+            </span>
+            <span class="badge badge-verified" style="font-size:var(--text-xs)">
+        <svg class="icon" style="width:11px;height:11px" aria-hidden="true"><use href="#icon-check"/></svg>
+        All Core Features Reported
+       </span>
+          </div>
+
+          <h1 class="location-hero__title">King's Cross Station</h1>
+          <div class="location-hero__meta">
+            <span style="font-size:var(--text-sm);color:var(--color-text-muted);display:flex;align-items:center;gap:6px">
+              <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-pin"/></svg>
+              Euston Road, King's Cross, London N1 9AL
+            </span>
+            <span style="font-size:var(--text-sm);color:var(--color-text-muted);display:flex;align-items:center;gap:6px">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-community"/></svg>
+              34 community reports
+            </span>
+            <span style="font-size:var(--text-sm);color:var(--color-text-muted);display:flex;align-items:center;gap:6px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 2 weeks ago
+            </span>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
+          <a href="report.html?location=kings-cross-station" class="btn btn-primary btn-lg">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#icon-trending"/></svg>
+            Submit an Update
+          </a>
+          <a href="index.html#discover" class="btn btn-ghost-white btn-lg">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+            Back to Explore
+          </a>
+        </div>
+      </div>
+    </div>
+      </div>
+
+      <!-- Main content -->
+      <div id="locationMain" class="location-content">
+        <div class="container">
+          <div class="location-content__inner">
+            <!-- Left: breakdown + timeline -->
+            <div>
+              <div id="accessibilityBreakdown">
+<div class="section-header reveal" style="margin-bottom:var(--space-6)">
+      <div style="display:flex;align-items:center;gap:var(--space-2)">
+        <span class="section-eyebrow" style="margin-bottom:0">Signature Feature</span>
+        <span class="badge badge-demo" style="font-size:0.65rem">Nuanced Analysis</span>
+      </div>
+      <h2 class="section-title" style="margin-top:var(--space-2)">The Accessibility Breakdown</h2>
+      <p class="section-subtitle" style="max-width:620px">
+        Unlike simplistic "accessible vs inaccessible" scores, AccessAble breaks down each facility individually with evidence freshness, uncertainty levels, and direct quotes from community visitors.
+      </p>
+    </div>
+
+    <!-- Architectural facility journey pathway container -->
+    <div id="journeyFlow"></div>
+
+    <!-- Feature Cards Stagger Grid -->
+    <div class="features-grid reveal-stagger">
+      
+      <article id="card-stepFree" class="feature-card status-available" aria-label="Step-free Access: Reported Available">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-success)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-stepfree"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Step-free Access</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                28 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Reported Available</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            Tactile-paved step-free entrances via both main Western Concourse and Euston Road. Level threshold throughout main concourse.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 2 weeks ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-success);font-weight:var(--font-medium)">
+              Low uncertainty · Corroborated
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--high" aria-label="Confidence: High confidence (multiple reports)">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">High confidence (multiple reports)</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=stepFree" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Step-free Access">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+      <article id="card-doorway" class="feature-card status-available" aria-label="Entrance & Doors: Reported Available">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-success)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-doorway"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Entrance & Doors</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                25 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Reported Available</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            Multiple automatic double glass sliding doors with >120cm clear opening width. Zero sill step. Push-pads available for manual bypass.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 2 weeks ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-success);font-weight:var(--font-medium)">
+              Low uncertainty · Corroborated
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--high" aria-label="Confidence: High confidence (multiple reports)">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">High confidence (multiple reports)</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=doorway" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Entrance & Doors">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+      <article id="card-ramp" class="feature-card status-available" aria-label="Ramp Available: Reported Available">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-success)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-ramp"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Ramp Available</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                22 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Reported Available</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            Gentle 1:15 gradient ramps with double continuous handrails connecting concourse to mezzanine shops and Northern ticket hall.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 2 weeks ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-success);font-weight:var(--font-medium)">
+              Low uncertainty · Corroborated
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--high" aria-label="Confidence: High confidence (multiple reports)">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">High confidence (multiple reports)</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=ramp" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Ramp Available">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+      <article id="card-lift" class="feature-card status-available" aria-label="Lift / Elevator: Reported Available">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-success)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-lift"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Lift / Elevator</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                30 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Reported Available</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            4 public passenger lifts connecting street to platforms 0-11 and Underground ticket hall. Voice announcements and braille buttons operational.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 2 weeks ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-success);font-weight:var(--font-medium)">
+              Low uncertainty · Corroborated
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--high" aria-label="Confidence: High confidence (multiple reports)">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">High confidence (multiple reports)</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=lift" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Lift / Elevator">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+      <article id="card-toilet" class="feature-card status-available" aria-label="Accessible Toilet: Reported Available">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-success)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-toilet"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Accessible Toilet</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                18 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Reported Available</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            Radar key accessible toilets on the main concourse near platform 9 and secondary unit near Western transit entrance. Changing Places facility available.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 1 month ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-success);font-weight:var(--font-medium)">
+              Low uncertainty · Corroborated
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--high" aria-label="Confidence: High confidence (multiple reports)">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">High confidence (multiple reports)</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=toilet" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Accessible Toilet">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+      <article id="card-parking" class="feature-card status-available" aria-label="Accessible Parking: Reported Available">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-success)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-parking"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Accessible Parking</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                12 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Reported Available</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            Designated Blue Badge accessible drop-off bays on Pancras Road with dropped curb and direct level station access.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 1 month ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-success);font-weight:var(--font-medium)">
+              Low uncertainty · Corroborated
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--high" aria-label="Confidence: High confidence (multiple reports)">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">High confidence (multiple reports)</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=parking" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Accessible Parking">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+      <article id="card-sensory" class="feature-card status-conflicting" aria-label="Sensory Friendly: Not Reported">
+        <div class="feature-card__header">
+          <div class="feature-card__icon-name">
+            <div class="feature-card__icon" style="background:var(--color-bg-secondary);color:var(--color-text-muted)">
+              <svg class="icon icon-md" aria-hidden="true"><use href="#icon-sensory"/></svg>
+            </div>
+            <div>
+              <h3 class="feature-card__name">Sensory Friendly</h3>
+              <span class="text-xs text-muted" style="display:block;margin-top:2px">
+                3 community observations
+              </span>
+            </div>
+          </div>
+          <span class="feature-card__status-label">Not Reported</span>
+        </div>
+
+        <!-- Evidence note from community -->
+        <div class="feature-card__evidence-box" style="background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);margin:var(--space-1) 0">
+          <div style="display:flex;align-items:center;gap:6px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted);margin-bottom:4px">
+            <svg class="icon" style="width:12px;height:12px;color:var(--color-accent-mint)" aria-hidden="true"><use href="#icon-info"/></svg>
+            Community Observation
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5">
+            Hearing induction loops present at customer service counters 1-4. Station can be loud during peak travel hours; sensory quiet room not yet confirmed.
+          </p>
+        </div>
+
+        
+
+        
+
+        <!-- Freshness, Confidence, and Uncertainty -->
+        <div class="feature-card__meta" style="padding-top:var(--space-2);border-top:1px solid var(--color-border-subtle);display:flex;flex-direction:column;gap:var(--space-2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+            <span class="feature-card__freshness" style="display:flex;align-items:center;gap:4px">
+              <svg class="icon" style="width:12px;height:12px" aria-hidden="true"><use href="#icon-clock"/></svg>
+              Reported 2 months ago
+            </span>
+            <span style="font-size:var(--text-xs);color:var(--color-amber);font-weight:var(--font-medium)">
+              Moderate uncertainty · Limited data
+            </span>
+          </div>
+
+          
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-2)">
+              <div class="confidence confidence--moderate" aria-label="Confidence: Moderate confidence">
+                <div class="confidence__bar" aria-hidden="true">
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                  <div class="confidence__segment"></div>
+                </div>
+                <span class="confidence__label" style="font-size:0.7rem">Moderate confidence</span>
+              </div>
+              <a href="report.html?location=kings-cross-station&feature=sensory" class="text-xs text-mint" style="text-decoration:underline;cursor:pointer" title="Update status for Sensory Friendly">
+                Update feature →
+              </a>
+            </div>
+          
+        </div>
+      </article>
+    
+    </div>
+              </div>
+              <div style="margin-top:var(--space-12)" id="reportTimeline">
+<div class="section-header reveal" style="margin-bottom:var(--space-6)">
+      <p class="section-eyebrow">Auditable Evidence</p>
+      <h2 class="section-title">Chronological Report History</h2>
+      <p class="section-subtitle">Read unfiltered community logs in reverse chronological order.</p>
+    </div>
+    <div class="card" style="border-color:var(--color-border)">
+      <div class="card-body">
+        
+      <div class="timeline-item">
+        <div class="timeline-item__line">
+          <div class="timeline-item__dot" aria-hidden="true"></div>
+          <div class="timeline-item__connector" aria-hidden="true"></div>
+        </div>
+        <div class="timeline-item__content">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__user" style="display:flex;align-items:center;gap:6px">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-user"/></svg>
+              Anonymous contributor
+            </span>
+            
+            <time class="timeline-item__date" datetime="2026-10-15">15 October 2026</time>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3);line-height:1.5">Step-free access clearly marked at both main entrances. Lifts were operational and spacious enough for motorized wheelchairs with companion.</p>
+          <div class="timeline-item__features" style="display:flex;flex-wrap:wrap;gap:6px">
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Step-free Access: ✓
+          </span>
+        
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Entrance & Doors: ✓
+          </span>
+        
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Lift / Elevator: ✓
+          </span>
+        
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Ramp Available: ✓
+          </span>
+        </div>
+        </div>
+      </div>
+    
+      <div class="timeline-item">
+        <div class="timeline-item__line">
+          <div class="timeline-item__dot" aria-hidden="true"></div>
+          <div class="timeline-item__connector" aria-hidden="true"></div>
+        </div>
+        <div class="timeline-item__content">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__user" style="display:flex;align-items:center;gap:6px">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-user"/></svg>
+              Community reporter
+            </span>
+            
+            <time class="timeline-item__date" datetime="2026-10-10">10 October 2026</time>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3);line-height:1.5">Ramps well maintained with high-contrast edge markings. Accessible toilets located on the main concourse — follow the blue accessibility signs.</p>
+          <div class="timeline-item__features" style="display:flex;flex-wrap:wrap;gap:6px">
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Ramp Available: ✓
+          </span>
+        
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Accessible Toilet: ✓
+          </span>
+        </div>
+        </div>
+      </div>
+    
+      <div class="timeline-item">
+        <div class="timeline-item__line">
+          <div class="timeline-item__dot" aria-hidden="true"></div>
+          <div class="timeline-item__connector" aria-hidden="true"></div>
+        </div>
+        <div class="timeline-item__content">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__user" style="display:flex;align-items:center;gap:6px">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-user"/></svg>
+              Anonymous contributor
+            </span>
+            
+            <time class="timeline-item__date" datetime="2026-09-28">28 September 2026</time>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3);line-height:1.5">Blue badge parking spaces available outside Pancras Road. Ticket machines at accessible height on the main concourse with audio jack.</p>
+          <div class="timeline-item__features" style="display:flex;flex-wrap:wrap;gap:6px">
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Accessible Parking: ✓
+          </span>
+        
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Entrance & Doors: ✓
+          </span>
+        </div>
+        </div>
+      </div>
+    
+      <div class="timeline-item">
+        <div class="timeline-item__line">
+          <div class="timeline-item__dot" aria-hidden="true"></div>
+          
+        </div>
+        <div class="timeline-item__content">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__user" style="display:flex;align-items:center;gap:6px">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-user"/></svg>
+              Community reporter
+            </span>
+            
+            <time class="timeline-item__date" datetime="2026-09-05">5 September 2026</time>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-3);line-height:1.5">All lifts in service during my visit. Step-free route from street to platform 0 is well signed.</p>
+          <div class="timeline-item__features" style="display:flex;flex-wrap:wrap;gap:6px">
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Lift / Elevator: ✓
+          </span>
+        
+          <span class="feature-status feature-status--available" style="font-size:0.7rem;padding:2px 8px">
+            <span class="status-dot" aria-hidden="true"></span>
+            Step-free Access: ✓
+          </span>
+        </div>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+              </div>
+            </div>
+            <!-- Right: sidebar -->
+            <aside id="locationSidebar" aria-label="Accessibility summary sidebar">
+<div class="card" style="position:sticky;top:calc(var(--nav-height) + var(--space-6));border-color:var(--color-border-accent)">
+      <div class="card-body" style="display:flex;flex-direction:column;gap:var(--space-5)">
+
+        <!-- Quick Summary & Checklist -->
+        <div>
+          <div class="section-eyebrow" style="margin-bottom:var(--space-2)">Visual Checklist</div>
+          <div style="font-size:var(--text-3xl);font-weight:var(--font-extrabold);color:var(--color-text-primary);letter-spacing:var(--tracking-tight)">
+            6 <span style="font-size:var(--text-sm);color:var(--color-text-muted);font-weight:var(--font-normal)">of 7 facilities reported available</span>
+          </div>
+          <div class="progress-bar" style="margin-top:var(--space-3)" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="7">
+            <div class="progress-bar__fill" style="width:86%"></div>
+          </div>
+          <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);line-height:1.4">
+            Evidence-based observations from 34 contributors.
+          </p>
+        </div>
+
+        <div class="divider" style="margin:0"></div>
+
+        <!-- Facility status list -->
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)" role="list" aria-label="Facility checklist">
+          
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-stepfree"/></svg>
+                  Step-free Access
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-success)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-success)" aria-hidden="true"><use href="#icon-check"/></svg>
+                  Available
+                </span>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-doorway"/></svg>
+                  Entrance & Doors
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-success)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-success)" aria-hidden="true"><use href="#icon-check"/></svg>
+                  Available
+                </span>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-ramp"/></svg>
+                  Ramp Available
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-success)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-success)" aria-hidden="true"><use href="#icon-check"/></svg>
+                  Available
+                </span>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-lift"/></svg>
+                  Lift / Elevator
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-success)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-success)" aria-hidden="true"><use href="#icon-check"/></svg>
+                  Available
+                </span>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-toilet"/></svg>
+                  Accessible Toilet
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-success)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-success)" aria-hidden="true"><use href="#icon-check"/></svg>
+                  Available
+                </span>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-parking"/></svg>
+                  Accessible Parking
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-success)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-success)" aria-hidden="true"><use href="#icon-check"/></svg>
+                  Available
+                </span>
+              </div>
+            
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:var(--text-sm)" role="listitem">
+                <span style="display:flex;align-items:center;gap:var(--space-2);color:var(--color-text-secondary)">
+                  <svg class="icon icon-sm" aria-hidden="true" style="color:var(--color-accent-mint)"><use href="#icon-sensory"/></svg>
+                  Sensory Friendly
+                </span>
+                <span style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);font-weight:var(--font-semibold);color:var(--color-text-muted)">
+                  <svg class="icon" style="width:12px;height:12px;color:var(--color-text-muted)" aria-hidden="true"><use href="#icon-info"/></svg>
+                  Unverified
+                </span>
+              </div>
+            
+        </div>
+
+        <div class="divider" style="margin:0"></div>
+
+        <!-- Action buttons -->
+        <a href="report.html?location=kings-cross-station" class="btn btn-primary btn-full">
+          <svg class="icon icon-md" aria-hidden="true"><use href="#icon-trending"/></svg>
+          Report an Observation
+        </a>
+
+        <!-- Disclaimer Banner -->
+        <div class="demo-banner" style="justify-content:center;text-align:center;font-size:0.7rem;line-height:1.4">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg>
+          Demo Prototype · Not verified with venue
+        </div>
+      </div>
+    </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;padding-top:0">
+        <a href="index.html" class="nav__logo" style="display:inline-flex">
+          <svg class="nav__logo-icon" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="7" r="2.5"/><path d="M11 13h8l3 9h4"/><path d="M11 13l-2 7"/>
+            <circle cx="10" cy="25" r="3.5"/><circle cx="21" cy="25" r="3.5"/><path d="M10 22v-3.5h7.5"/>
+          </svg>
+          AccessAble
+        </a>
+        <p class="footer__disclaimer">
+          <svg class="icon icon-sm" aria-hidden="true" style="vertical-align:middle;color:var(--color-amber)"><use href="#icon-alert"/></svg>
+          Demo prototype. All data is illustrative and not verified.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" role="region" aria-label="Notifications" aria-live="polite"></div>
+  <script src="js/accessable.js"></script>
+</body>
+</html>

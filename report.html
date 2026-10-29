@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit an accessibility report for a public place on AccessAble. Help the community by sharing what you observed.">
+  <title>Submit a Report · AccessAble</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <style>
+    .sr-only {
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+    .photo-drop {
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      position: relative;
+    }
+    .photo-drop:hover, .photo-drop:focus-within {
+      border-color: var(--color-accent-mint);
+      background: var(--color-accent-mint-dim);
+    }
+    .photo-drop input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body data-page="report">
+
+  <!-- Icon Sprite -->
+  <div style="display:none" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-wheelchair" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="1.5"/><path d="M9 9h4l2 6h3"/><path d="M9 9l-1 5"/><circle cx="8" cy="19" r="2.5"/><circle cx="16" cy="19" r="2.5"/><path d="M8 16.5v-2.5h6"/></symbol>
+      <symbol id="icon-ramp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20L21 4"/><path d="M21 4v5"/><path d="M21 4h-5"/><path d="M3 20h18"/></symbol>
+      <symbol id="icon-lift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/><path d="M7 9l-2 2 2 2"/><path d="M17 15l2-2-2-2"/></symbol>
+      <symbol id="icon-toilet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="5" r="2"/><circle cx="15" cy="5" r="2"/><path d="M6 10h5v4l1 5H7l1-5v-4z"/><path d="M13 10h5l1 5v3h-2v-3h-3v3h-2v-3l1-5z"/></symbol>
+      <symbol id="icon-parking" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></symbol>
+      <symbol id="icon-sensory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="icon-stepfree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M3 20V8h4v4h4v4h4v4"/></symbol>
+      <symbol id="icon-doorway" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 012-2h12a2 2 0 012 2v16"/><path d="M9 21V7h6v14"/><circle cx="13.5" cy="14" r="1" fill="currentColor"/></symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+      <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></symbol>
+      <symbol id="icon-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+    </svg>
+  </div>
+
+  <a href="#main" class="sr-only" style="position:fixed;top:var(--space-4);left:var(--space-4);z-index:1000;background:var(--color-accent-mint);color:var(--color-text-inverse);padding:var(--space-2) var(--space-4);border-radius:var(--radius-md);font-weight:var(--font-semibold)" tabindex="0">Skip to main content</a>
+
+  <!-- Nav -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AccessAble home">
+          <svg class="nav__logo-icon" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="7" r="2.5"/><path d="M11 13h8l3 9h4"/><path d="M11 13l-2 7"/>
+            <circle cx="10" cy="25" r="3.5"/><circle cx="21" cy="25" r="3.5"/><path d="M10 22v-3.5h7.5"/>
+          </svg>
+          AccessAble
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="index.html#discover">Explore</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="index.html#discover" class="btn btn-ghost btn-sm" style="display:inline-flex">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-search"/></svg>
+            Find Places
+          </a>
+          <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+            <svg class="icon icon-md" aria-hidden="true"><use href="#icon-menu"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+      <nav class="nav-mobile__links">
+        <a href="index.html#discover">Explore Places</a>
+        <a href="index.html#how-it-works">How It Works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="page">
+
+      <div class="report-page">
+
+        <!-- Page heading -->
+        <div style="margin-bottom:var(--space-8)">
+          <a href="index.html#discover" style="display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-4);transition:color var(--transition-fast)" onmouseover="this.style.color='var(--color-accent-mint)'" onmouseout="this.style.color='var(--color-text-muted)'">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+            Back to Explore
+          </a>
+          <h1 style="font-size:clamp(var(--text-2xl),4vw,var(--text-4xl));font-weight:var(--font-extrabold);margin-bottom:var(--space-2)">Submit a Report</h1>
+          <p style="font-size:var(--text-base);color:var(--color-text-secondary)">Share what you observed to help others plan their visit.</p>
+
+          <!-- Local storage notice -->
+          <div class="card card-accent-border" style="margin-top:var(--space-4);background:rgba(245,185,66,0.06);border-color:rgba(245,185,66,0.2)" role="note" aria-label="Data storage notice">
+            <div class="card-body" style="display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-4)">
+              <svg class="icon icon-md" aria-hidden="true" style="color:var(--color-amber);flex-shrink:0;margin-top:1px"><use href="#icon-alert"/></svg>
+              <div style="font-size:var(--text-sm)">
+                <strong style="color:var(--color-amber)">Local storage only.</strong>
+                <span style="color:var(--color-text-secondary)"> Your report will be saved on this device only. It is <strong>not</strong> shared with other users or sent to any server in this prototype.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step indicator -->
+        <div class="step-indicator" role="list" aria-label="Form progress" style="margin-bottom:var(--space-8)">
+          <div class="step-indicator__step active" role="listitem" aria-label="Step 1: Find Location (current)">
+            <div class="step-indicator__circle" aria-hidden="true">1</div>
+            <span class="step-indicator__label">Find Location</span>
+          </div>
+          <div class="step-indicator__line" aria-hidden="true"></div>
+          <div class="step-indicator__step" role="listitem" aria-label="Step 2: Report Details">
+            <div class="step-indicator__circle" aria-hidden="true">2</div>
+            <span class="step-indicator__label">Report Details</span>
+          </div>
+          <div class="step-indicator__line" aria-hidden="true"></div>
+          <div class="step-indicator__step" role="listitem" aria-label="Step 3: Review and Submit">
+            <div class="step-indicator__circle" aria-hidden="true">3</div>
+            <span class="step-indicator__label">Review & Submit</span>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div id="reportForm">
+
+          <!-- ── Step 1: Location ─────────────────────────────── -->
+          <div class="report-step active" id="step1" role="group" aria-labelledby="step1-heading">
+            <h2 id="step1-heading" style="font-size:var(--text-xl);font-weight:var(--font-bold);margin-bottom:var(--space-2)">Which place are you reporting?</h2>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-6)">Search for the place you visited. Only locations in the demo dataset are available.</p>
+
+            <div class="form-group" style="margin-bottom:var(--space-4)">
+              <label for="locationSearch" class="form-label">Search for a place</label>
+              <div class="search-bar">
+                <svg class="icon icon-md search-bar__icon" aria-hidden="true"><use href="#icon-search"/></svg>
+                <input
+                  type="search"
+                  id="locationSearch"
+                  class="search-bar__input"
+                  placeholder="e.g. King's Cross Station, British Library…"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-controls="locationDropdown"
+                  aria-label="Search for a place to report"
+                >
+                <div class="search-dropdown" id="locationDropdown" role="listbox" aria-label="Location suggestions"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom:var(--space-6)">
+              <p class="form-hint" style="margin-bottom:var(--space-3)">Or choose from recently viewed:</p>
+              <div class="filter-pills" id="recentPicks" role="list" aria-label="Recently viewed locations">
+                <button class="filter-pill" data-id="kings-cross-station" type="button" style="font-size:var(--text-xs)">
+                  <span aria-hidden="true">🚉</span> King's Cross Station
+                </button>
+                <button class="filter-pill" data-id="british-library" type="button" style="font-size:var(--text-xs)">
+                  <span aria-hidden="true">🏛️</span> British Library
+                </button>
+                <button class="filter-pill" data-id="uclh-macmillan" type="button" style="font-size:var(--text-xs)">
+                  <span aria-hidden="true">🏥</span> UCLH Macmillan Cancer Centre
+                </button>
+              </div>
+            </div>
+
+            <div id="selectedLocation" style="display:none" aria-live="polite" aria-label="Selected location"></div>
+
+            <div style="margin-top:var(--space-8);display:flex;justify-content:flex-end">
+              <button id="toStep2" class="btn btn-primary btn-lg">
+                Continue
+                <svg class="icon icon-md" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Step 2: Details ─────────────────────────────── -->
+          <div class="report-step" id="step2" role="group" aria-labelledby="step2-heading">
+            <h2 id="step2-heading" style="font-size:var(--text-xl);font-weight:var(--font-bold);margin-bottom:var(--space-2)">What did you observe?</h2>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-6)">Select what you saw during your visit. Only report what you personally observed. "Unsure" is always a valid answer.</p>
+
+            <fieldset id="featureReports" style="display:flex;flex-direction:column;gap:var(--space-4)" aria-label="Accessibility features observed">
+              <legend class="sr-only">Accessibility features</legend>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-stepFree">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-stepfree"/></svg></span>
+                  <div>
+                    <div id="feat-label-stepFree" style="font-weight:var(--font-semibold)">Step-free Entrance</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Step-free Entrance status" data-feature="stepFree">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-stepFree" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-stepFree" class="form-input form-textarea" data-feat="stepFree" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Step-free Entrance" style="min-height:60px"></textarea>
+                </div>
+              </div>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-doorway">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-doorway"/></svg></span>
+                  <div>
+                    <div id="feat-label-doorway" style="font-weight:var(--font-semibold)">Doorway &amp; Entry Width</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Doorway & Entry Width status" data-feature="doorway">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-doorway" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-doorway" class="form-input form-textarea" data-feat="doorway" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Doorway &amp; Entry Width" style="min-height:60px"></textarea>
+                </div>
+              </div>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-ramp">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-ramp"/></svg></span>
+                  <div>
+                    <div id="feat-label-ramp" style="font-weight:var(--font-semibold)">Permanent Ramp Access</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Permanent Ramp Access status" data-feature="ramp">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-ramp" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-ramp" class="form-input form-textarea" data-feat="ramp" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Permanent Ramp Access" style="min-height:60px"></textarea>
+                </div>
+              </div>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-lift">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-lift"/></svg></span>
+                  <div>
+                    <div id="feat-label-lift" style="font-weight:var(--font-semibold)">Passenger Lift</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Passenger Lift status" data-feature="lift">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-lift" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-lift" class="form-input form-textarea" data-feat="lift" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Passenger Lift" style="min-height:60px"></textarea>
+                </div>
+              </div>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-toilet">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-toilet"/></svg></span>
+                  <div>
+                    <div id="feat-label-toilet" style="font-weight:var(--font-semibold)">Accessible Toilet</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Accessible Toilet status" data-feature="toilet">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-toilet" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-toilet" class="form-input form-textarea" data-feat="toilet" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Accessible Toilet" style="min-height:60px"></textarea>
+                </div>
+              </div>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-parking">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-parking"/></svg></span>
+                  <div>
+                    <div id="feat-label-parking" style="font-weight:var(--font-semibold)">Blue Badge Parking</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Blue Badge Parking status" data-feature="parking">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-parking" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-parking" class="form-input form-textarea" data-feat="parking" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Blue Badge Parking" style="min-height:60px"></textarea>
+                </div>
+              </div>
+              <div class="feature-report-row" role="group" aria-labelledby="feat-label-sensory">
+                <div class="feature-report-row__header">
+                  <span class="feature-report-row__icon"><svg class="icon icon-md" aria-hidden="true"><use href="#icon-sensory"/></svg></span>
+                  <div>
+                    <div id="feat-label-sensory" style="font-weight:var(--font-semibold)">Sensory-friendly Environment</div>
+                    <div style="font-size:var(--text-xs);color:var(--color-text-muted)">Select what you observed</div>
+                  </div>
+                </div>
+                <div class="toggle-group" role="radiogroup" aria-label="Sensory-friendly Environment status" data-feature="sensory">
+                  <button type="button" class="toggle-btn" data-value="available" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-check"/></svg> Available</button>
+                  <button type="button" class="toggle-btn" data-value="unavailable" aria-pressed="false"><svg class="icon icon-sm" aria-hidden="true"><use href="#icon-x"/></svg> Not Available</button>
+                  <button type="button" class="toggle-btn" data-value="null" aria-pressed="false">Unsure</button>
+                </div>
+                <div class="form-group" style="margin-top:0">
+                  <label for="notes-sensory" class="form-label">Notes (optional)</label>
+                  <textarea id="notes-sensory" class="form-input form-textarea" data-feat="sensory" placeholder="Describe what you observed, e.g. location of ramp, width of doorway..." rows="2" aria-label="Notes for Sensory-friendly Environment" style="min-height:60px"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Visit date -->
+            <div class="form-group" style="margin-top:var(--space-6)">
+              <label for="visitDate" class="form-label">Date of visit <span style="color:var(--color-danger)" aria-hidden="true">*</span></label>
+              <input
+                type="date"
+                id="visitDate"
+                class="form-input"
+                required
+                aria-required="true"
+                style="max-width:240px"
+                aria-label="Date of your visit"
+              >
+              <span class="form-hint">When did you visit this place?</span>
+            </div>
+
+            <!-- Photo upload -->
+            <div class="form-group" style="margin-top:var(--space-6)">
+              <p class="form-label" id="photoLabel">Add a photo (optional)</p>
+              <div class="photo-drop" aria-labelledby="photoLabel">
+                <input type="file" id="photoUpload" accept="image/*" aria-label="Upload a photo of the accessibility feature">
+                <svg class="icon icon-xl" aria-hidden="true" style="color:var(--color-text-muted);margin:0 auto var(--space-3)"><use href="#icon-upload"/></svg>
+                <p style="font-size:var(--text-sm);color:var(--color-text-secondary)">Click to upload a photo</p>
+                <p class="form-hint">Supported: JPG, PNG, WEBP · Max 10MB · Stored locally only</p>
+              </div>
+              <div id="photoPreview" aria-live="polite" aria-label="Photo preview"></div>
+            </div>
+
+            <div style="margin-top:var(--space-8);display:flex;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap">
+              <button id="backToStep1" class="btn btn-secondary">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+                Back
+              </button>
+              <button id="toStep3" class="btn btn-primary btn-lg">
+                Review Report
+                <svg class="icon icon-md" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ── Step 3: Review & Submit ────────────────────── -->
+          <div class="report-step" id="step3" role="group" aria-labelledby="step3-heading">
+            <h2 id="step3-heading" style="font-size:var(--text-xl);font-weight:var(--font-bold);margin-bottom:var(--space-2)">Review your report</h2>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:var(--space-6)">Please check the details below before submitting. Your name will be anonymised in all public displays.</p>
+
+            <div id="reviewContent" aria-live="polite" aria-label="Report review summary">
+              <!-- Populated by JS -->
+            </div>
+
+            <!-- Reporter name -->
+            <div class="form-group" style="margin-top:var(--space-4)">
+              <label for="reporterName" class="form-label">Your name (optional)</label>
+              <input
+                type="text"
+                id="reporterName"
+                class="form-input"
+                placeholder="Leave blank to submit anonymously"
+                maxlength="80"
+                aria-label="Your name — will be displayed as 'Anonymous contributor' publicly"
+                style="max-width:360px"
+              >
+              <span class="form-hint">This will be displayed as "Anonymous contributor" in all public-facing reports.</span>
+            </div>
+
+            <!-- Guidelines checkbox -->
+            <div class="card" style="margin-top:var(--space-4);margin-bottom:var(--space-6)">
+              <div class="card-body">
+                <label class="checkbox-wrapper">
+                  <input type="checkbox" id="agreeGuidelines" required aria-required="true">
+                  <span style="font-size:var(--text-sm);color:var(--color-text-secondary)">
+                    I confirm that this report is based on my personal observation. I have not fabricated or exaggerated any information. I understand that this report is stored locally on my device only and is not transmitted to any server in this prototype.
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap">
+              <button id="backToStep2" class="btn btn-secondary">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+                Back
+              </button>
+              <button id="submitReport" class="btn btn-primary btn-lg">
+                <svg class="icon icon-md" aria-hidden="true"><use href="#icon-check"/></svg>
+                Submit Report
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /reportForm -->
+
+        <!-- ── Success State ───────────────────────────────── -->
+        <div id="successState" style="display:none" role="alert" aria-live="assertive">
+          <div class="success-card">
+            <div class="success-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:36px;height:36px">
+                <polyline points="20 6 9 17 4 12" class="check-draw"/>
+              </svg>
+            </div>
+            <h2 style="font-size:var(--text-2xl);font-weight:var(--font-bold)">Report Saved</h2>
+            <p style="font-size:var(--text-base);color:var(--color-text-secondary);max-width:400px">Your report has been saved locally on this device. It will not be shared with other users — this is a prototype.</p>
+            <div class="demo-banner">
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-alert"/></svg>
+              Local storage only · Not shared with other users
+            </div>
+            <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;justify-content:center;margin-top:var(--space-2)">
+              <a id="viewLocationLink" href="location.html" class="btn btn-primary">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+                View Location Profile
+              </a>
+              <button id="startOver" class="btn btn-ghost">Submit another report</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /report-page -->
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;padding-top:0">
+        <a href="index.html" class="nav__logo" style="display:inline-flex">
+          <svg class="nav__logo-icon" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="7" r="2.5"/><path d="M11 13h8l3 9h4"/><path d="M11 13l-2 7"/>
+            <circle cx="10" cy="25" r="3.5"/><circle cx="21" cy="25" r="3.5"/><path d="M10 22v-3.5h7.5"/>
+          </svg>
+          AccessAble
+        </a>
+        <p class="footer__disclaimer">Demo prototype. Reports are stored locally on your device only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" role="region" aria-label="Notifications" aria-live="polite"></div>
+  <script src="js/accessable.js"></script>
+</body>
+</html>
