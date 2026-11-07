@@ -32,9 +32,6 @@ Add your project screenshots here.
 - Database integration
 - Verified accessibility information
 
-## ⚠️ Disclaimer
-AccessAble is currently a prototype. Place information and accessibility details may contain sample data and should not be treated as verified real-world information.
-
 ## 👨‍💻 Developer
 **Shivam Kumar**
 
