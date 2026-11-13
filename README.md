@@ -37,4 +37,4 @@ Add your project screenshots here.
 
 ---
 
-
+⭐ If you like this project, consider giving it a star!
